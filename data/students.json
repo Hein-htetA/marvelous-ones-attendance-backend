@@ -1,0 +1,68 @@
+[
+    {
+        "name": "Hein1",
+        "level": "elementary",
+        "batch": 3,
+        "father": "U Hla",
+        "mother": "Daw Mya",
+        "address": "Shwe War Road",
+        "nrc": "3/kasaka(N)100419",
+        "age": 25,
+        "attendance": [[false, false, false, false, false]]
+    },
+    {
+        "name": "Hein2",
+        "level": "elementary",
+        "batch": 3,
+        "father": "U Hla2",
+        "mother": "Daw Mya2",
+        "address": "Shwe War Road",
+        "nrc": "3/kasaka(N)100419",
+        "age": 25,
+        "attendance": [[false, false, false, false, false]]
+    },
+    {
+        "name": "Hein3",
+        "level": "elementary",
+        "batch": 3,
+        "father": "U Hla3",
+        "mother": "Daw Mya3",
+        "address": "Shwe War Road",
+        "nrc": "3/kasaka(N)100419",
+        "age": 25,
+        "attendance": [[false, false, false, false, false]]
+    },
+    {
+        "name": "Hein4",
+        "level": "elementary",
+        "batch": 3,
+        "father": "U Hla4",
+        "mother": "Daw Mya4",
+        "address": "Shwe War Road",
+        "nrc": "3/kasaka(N)100419",
+        "age": 25,
+        "attendance": [[false, false, false, false, false]]
+    },
+    {
+        "name": "Hein5",
+        "level": "elementary",
+        "batch": 3,
+        "father": "U Hla5",
+        "mother": "Daw Mya5",
+        "address": "Shwe War Road",
+        "nrc": "3/kasaka(N)100419",
+        "age": 25,
+        "attendance": [[false, false, false, false, false]]
+    },
+    {
+        "name": "Hein6",
+        "level": "elementary",
+        "batch": 3,
+        "father": "U Hla6",
+        "mother": "Daw Mya6",
+        "address": "Shwe War Road",
+        "nrc": "3/kasaka(N)100419",
+        "age": 25,
+        "attendance": [[false, false, false, false, false]]
+    }
+]
