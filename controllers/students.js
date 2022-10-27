@@ -1,5 +1,4 @@
 const Student = require('../models/studentSchema');
-const asyncWrapper = require('../test/wrapper');
 
 const getByBatch = async (req, res) => {
 
@@ -52,6 +51,12 @@ const getByBatch = async (req, res) => {
     res.send({ students, nbHits: students.length})
 }
 
+const attendanceUpdate = async (req, res) => {
+  console.log(req.body);
+  res.send('in patch route');
+}
+
 module.exports = {
-    getByBatch
+    getByBatch,
+    attendanceUpdate
 }
