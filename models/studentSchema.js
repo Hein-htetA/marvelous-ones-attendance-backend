@@ -5,15 +5,6 @@ const studentSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Name must be provided']
     },
-    level: {
-        type: String,
-        enum: {
-            values: ['elementary', 'intermediate', 'advanced'],
-            message: '{VALUE} is not provided'
-        },
-        lowercase: true,
-        default: 'intermediate'
-    },
     batch: {
         type: Number,
         required: [true, 'Batch number must be provided'],
@@ -24,29 +15,45 @@ const studentSchema = new mongoose.Schema({
     mother: {
         type: String,
     },
+    birthDate: {
+        type: Date,
+    },
     address: {
         type: String,
+    },
+    contactNo: {
+        type: String,
+    },
+    education: {
+        type: String
+    },
+    nrc: {
+        type: String,
+        lowercase: true,
+    },
+    occupation: {
+        type: String
+    },
+    jobDepartment: {
+        type: String
+    },
+    level: {
+        type: String,
+        enum: {
+            values: ['elementary', 'intermediate', 'advanced'],
+            message: '{VALUE} is not provided'
+        },
+        lowercase: true,
+        default: 'intermediate'
     },
     createdByApp: {
         type: Boolean,
         default: true
     },
-    nrc: {
-        type: String,
-        lowercase: true,
-        match: [
-            /^\d{1,2}\/\w{3}/,
-            'nrc format is not valid'
-        ],
-        required: [true, 'NRC number must be provided']
-    },
-    age: {
-        type: Number,
-    },
     attendance: {
         type: [[Boolean]],
         default: [
-            Array(6).fill(false)
+            Array(6).fill(true)
         ]
     }
 }, { timestamps: true })

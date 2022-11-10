@@ -7,13 +7,11 @@ const auth = async (req, res, next) => {
         throw new UnauthenticatedError('Authentication invalid');
     }
     const token = authHeader.split(' ')[1];
-    console.log(req.headers);
 
     try {
         const payload = jwt.verify(token, process.env.JWT_SECRET);
         next();
     } catch (error) {
-        console.log(error)
         throw new UnauthenticatedError("Invalid Authentication");
     }
 }

@@ -65,18 +65,17 @@ const attendanceUpdate = async (req, res) => {
   });
 
   const attendanceUpdated = await Student.bulkWrite(operations);
-  console.log(attendanceUpdated);
   
   res.send({msg: "success"});
 }
 
 const addNewStudent = async (req, res) => {
+const reqBatch = Number(req.body.batch);
 
-const batch = Number(req.body.batch);
   const pipeline = [
     {
       '$match': {
-        'batch': batch
+        'batch': reqBatch
       }
     }, {
       '$project': {
@@ -93,15 +92,14 @@ const batch = Number(req.body.batch);
       }
     }
   ]
+  
+  // const [{ totalWeek }] = await Student.aggregate(pipeline)
+  const [totalWeek] = await Student.aggregate(pipeline)
 
-  const [{ totalWeek }] = await Student.aggregate(pipeline)
-  // const totalWeek = await Student.aggregate(pipeline)
-  // console.log(totalWeek)
-
-  const attendanceFill = Array(totalWeek).fill(Array(6).fill(false))
-
-  const newStudent = await Student.create({...req.body, attendanceFill})
-  res.send({newStudent, msg: "success"});
+  const attendanceFill = Array(totalWeek ? totalWeek.totalWeek : 1).fill(Array(6).fill(true))
+  const newStudent = await Student.create({...req.body, attendance: attendanceFill})
+  const {name, batch} = newStudent;
+  res.send({name, batch, msg: "success"});
 }
 
 module.exports = {
